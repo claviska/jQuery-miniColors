@@ -212,6 +212,8 @@
 
     // Swatches
     if(settings.swatches && settings.swatches.length !== 0) {
+      // Make sure we don't have duplicates in the swatch
+      settings.swatches=Array.from(new Set(settings.swatches));
       panel.addClass('minicolors-with-swatches');
       swatches = $('<ul class="minicolors-swatches"></ul>')
         .appendTo(panel);
